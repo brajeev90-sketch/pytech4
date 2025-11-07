@@ -12,6 +12,20 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background: #ffffff;
   color: #1a1a1a;
+  overflow-x: hidden;
+}
+
+/* Force hide any fixed positioned elements in bottom right */
+body::after {
+  content: '';
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 200px;
+  height: 100px;
+  background: transparent;
+  pointer-events: none;
+  z-index: 2147483648;
 }
 
 h1, h2, h3, h4, h5, h6 {
