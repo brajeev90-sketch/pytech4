@@ -19,6 +19,10 @@ const Header = () => {
     { name: 'App Development', slug: 'app-development' },
     { name: 'Digital Marketing Services', slug: 'digital-marketing-services' },
     { name: 'Enquiry Generation Services', slug: 'enquiry-generation-services' },
+    { name: 'Search Engine Optimization', slug: 'search-engine-optimization' },
+    { name: 'App Marketing', slug: 'app-marketing' },
+    { name: 'Content Marketing', slug: 'content-marketing' },
+    { name: 'PPC/Paid Marketing', slug: 'ppc-paid-marketing' },
   ];
 
   return (
