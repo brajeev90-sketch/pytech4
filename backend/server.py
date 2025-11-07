@@ -350,6 +350,98 @@ async def seed_services():
                 {"step": 5, "title": "Convert", "description": "Close deals with qualified prospects"}
             ],
             "keywords": ["lead generation", "enquiry generation", "conversion optimization", "sales funnel"]
+        },
+        {
+            "id": "6",
+            "name": "Search Engine Optimization",
+            "slug": "search-engine-optimization",
+            "description": "Dominate search results and drive organic traffic with our expert SEO services. We optimize your website to rank higher on Google and other search engines, bringing qualified traffic to your business.",
+            "short_description": "Rank higher on Google and drive organic traffic",
+            "features": [
+                "Technical SEO Audit",
+                "On-Page Optimization",
+                "Off-Page SEO & Link Building",
+                "Local SEO",
+                "Keyword Research & Strategy",
+                "SEO Performance Reporting"
+            ],
+            "process_steps": [
+                {"step": 1, "title": "Audit", "description": "Comprehensive SEO audit of your website"},
+                {"step": 2, "title": "Research", "description": "Keyword research and competitor analysis"},
+                {"step": 3, "title": "Optimize", "description": "Implement on-page and technical SEO"},
+                {"step": 4, "title": "Build", "description": "Quality link building and content strategy"},
+                {"step": 5, "title": "Monitor", "description": "Track rankings and optimize continuously"}
+            ],
+            "keywords": ["seo", "search engine optimization", "google ranking", "organic traffic"]
+        },
+        {
+            "id": "7",
+            "name": "App Marketing",
+            "slug": "app-marketing",
+            "description": "Boost your app downloads and user engagement with comprehensive app marketing strategies. From app store optimization to user acquisition campaigns, we help your app succeed.",
+            "short_description": "Drive app downloads and user engagement",
+            "features": [
+                "App Store Optimization (ASO)",
+                "User Acquisition Campaigns",
+                "In-App Marketing",
+                "App Analytics & Insights",
+                "Retention Strategies",
+                "Influencer Marketing"
+            ],
+            "process_steps": [
+                {"step": 1, "title": "Analysis", "description": "Analyze app market and competitors"},
+                {"step": 2, "title": "Optimize", "description": "ASO for app stores"},
+                {"step": 3, "title": "Launch", "description": "User acquisition campaigns"},
+                {"step": 4, "title": "Engage", "description": "In-app engagement strategies"},
+                {"step": 5, "title": "Retain", "description": "User retention and re-engagement"}
+            ],
+            "keywords": ["app marketing", "aso", "user acquisition", "app downloads"]
+        },
+        {
+            "id": "8",
+            "name": "Content Marketing",
+            "slug": "content-marketing",
+            "description": "Engage your audience with compelling content that drives results. Our content marketing services help you build authority, generate leads, and grow your business through strategic content.",
+            "short_description": "Strategic content that engages and converts",
+            "features": [
+                "Content Strategy Development",
+                "Blog Writing & Management",
+                "Video Content Creation",
+                "Infographics & Visual Content",
+                "Social Media Content",
+                "Content Distribution"
+            ],
+            "process_steps": [
+                {"step": 1, "title": "Strategy", "description": "Develop content marketing strategy"},
+                {"step": 2, "title": "Create", "description": "Produce high-quality content"},
+                {"step": 3, "title": "Optimize", "description": "SEO optimization for content"},
+                {"step": 4, "title": "Distribute", "description": "Multi-channel content distribution"},
+                {"step": 5, "title": "Measure", "description": "Track performance and refine"}
+            ],
+            "keywords": ["content marketing", "blog writing", "content strategy", "video content"]
+        },
+        {
+            "id": "9",
+            "name": "PPC/Paid Marketing",
+            "slug": "ppc-paid-marketing",
+            "description": "Maximize ROI with targeted paid advertising campaigns. Our PPC experts manage Google Ads, Facebook Ads, and other paid channels to drive qualified traffic and conversions.",
+            "short_description": "Targeted paid ads that deliver high ROI",
+            "features": [
+                "Google Ads Management",
+                "Facebook & Instagram Ads",
+                "LinkedIn Advertising",
+                "Display & Remarketing",
+                "Shopping Ads",
+                "Campaign Optimization"
+            ],
+            "process_steps": [
+                {"step": 1, "title": "Research", "description": "Audience and keyword research"},
+                {"step": 2, "title": "Setup", "description": "Campaign structure and ad creation"},
+                {"step": 3, "title": "Launch", "description": "Launch campaigns across platforms"},
+                {"step": 4, "title": "Monitor", "description": "Real-time monitoring and adjustments"},
+                {"step": 5, "title": "Optimize", "description": "Continuous optimization for ROI"}
+            ],
+            "keywords": ["ppc", "google ads", "paid marketing", "facebook ads"]
         }
     ]
     await db.services.insert_many(services)
