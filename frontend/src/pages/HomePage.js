@@ -6,6 +6,7 @@ import HeroSection from '@/components/home/HeroSection';
 import ServicesSection from '@/components/home/ServicesSection';
 import AboutSection from '@/components/home/AboutSection';
 import StatsSection from '@/components/home/StatsSection';
+import PartnersSection from '@/components/home/PartnersSection';
 import TestimonialsSection from '@/components/home/TestimonialsSection';
 import PortfolioSection from '@/components/home/PortfolioSection';
 import ServiceLocations from '@/components/home/ServiceLocations';
