@@ -32,8 +32,30 @@ const ContactSection = () => {
     setLoading(true);
 
     try {
+      // Format message for WhatsApp
+      const message = `*New Enquiry from PyTech Digital Website*\n\n` +
+        `*Name:* ${formData.name}\n` +
+        `*Email:* ${formData.email}\n` +
+        `*Phone:* ${formData.phone}\n` +
+        `*City:* ${formData.city}\n` +
+        `*Service Required:* ${formData.service}\n` +
+        `*Message:* ${formData.message}`;
+
+      // Encode message for URL
+      const encodedMessage = encodeURIComponent(message);
+      
+      // WhatsApp number (remove + and spaces)
+      const whatsappNumber = '919205222170';
+      
+      // Open WhatsApp
+      window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`, '_blank');
+      
+      // Also save to database for record keeping
       await axios.post(`${API}/contact`, formData);
-      toast.success('Thank you! We will contact you shortly.');
+      
+      toast.success('Redirecting to WhatsApp...');
+      
+      // Clear form
       setFormData({
         name: '',
         email: '',
