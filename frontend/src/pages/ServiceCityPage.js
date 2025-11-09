@@ -44,17 +44,37 @@ const ServiceCityPage = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-2xl text-gray-600">Loading...</div>
+      <div className="min-h-screen flex items-center justify-center bg-white">
+        <div className="text-center">
+          <div className="text-2xl text-gray-600 mb-4">Loading...</div>
+          <div className="text-sm text-gray-400">
+            {serviceSlug && citySlug ? `Loading ${serviceSlug} in ${citySlug}` : 'Initializing...'}
+          </div>
+        </div>
       </div>
     );
   }
 
   if (error || !pageData) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-2xl text-gray-600">{error || 'Page not found'}</div>
-      </div>
+      <>
+        <Header />
+        <div className="min-h-screen flex items-center justify-center bg-white">
+          <div className="text-center p-8">
+            <div className="text-2xl text-gray-900 mb-4">{error || 'Page not found'}</div>
+            <div className="text-gray-600 mb-6">
+              The page you're looking for doesn't exist or the service/city combination is not available.
+            </div>
+            <a href="/" className="inline-block bg-cyan-600 hover:bg-cyan-700 text-white px-6 py-3 rounded-lg transition-colors">
+              Go to Homepage
+            </a>
+            <div className="mt-4 text-sm text-gray-400">
+              Service: {serviceSlug || 'Not specified'} | City: {citySlug || 'Not specified'}
+            </div>
+          </div>
+        </div>
+        <Footer />
+      </>
     );
   }
 
