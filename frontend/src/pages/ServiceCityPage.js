@@ -19,18 +19,28 @@ const ServiceCityPage = () => {
   useEffect(() => {
     const fetchPageData = async () => {
       try {
+        console.log('Fetching data for:', serviceSlug, citySlug);
+        console.log('API URL:', `${API}/service-city/${serviceSlug}/${citySlug}`);
         const response = await axios.get(`${API}/service-city/${serviceSlug}/${citySlug}`);
+        console.log('Page data received:', response.data);
         setPageData(response.data);
       } catch (error) {
         console.error('Error fetching page data:', error);
+        console.error('Error details:', error.response?.data || error.message);
         setError('Service or city not found');
       } finally {
         setLoading(false);
       }
     };
 
-    fetchPageData();
-  }, [serviceSlug, citySlug]);
+    if (serviceSlug && citySlug) {
+      fetchPageData();
+    } else {
+      console.error('Missing serviceSlug or citySlug');
+      setError('Invalid page parameters');
+      setLoading(false);
+    }
+  }, [serviceSlug, citySlug, API]);
 
   if (loading) {
     return (
