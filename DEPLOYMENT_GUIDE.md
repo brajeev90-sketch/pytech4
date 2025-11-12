@@ -4,6 +4,15 @@
 
 All 450 service-city pages are functioning properly. If you're seeing blank pages after building, follow these troubleshooting steps:
 
+## ✅ IMPORTANT UPDATE - BACKEND URL FIX APPLIED
+
+**The code has been updated to automatically detect the correct backend URL:**
+- When deployed to `pytech.digital`, it will use: `https://localseo-master.preview.emergentagent.com`
+- For local development, it uses the appropriate localhost URL
+- This fix is now built into all API-calling components
+
+**You no longer need to manually configure REACT_APP_BACKEND_URL in production!**
+
 ## Common Issues & Solutions
 
 ### 1. **Service Pages Appear Blank in Production**
