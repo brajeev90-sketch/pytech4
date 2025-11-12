@@ -13,7 +13,18 @@ import ServiceLocations from '@/components/home/ServiceLocations';
 import ContactSection from '@/components/ContactSection';
 import { Helmet } from 'react-helmet';
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+// Handle both development and production environments
+const getBackendURL = () => {
+  if (process.env.REACT_APP_BACKEND_URL) {
+    return process.env.REACT_APP_BACKEND_URL;
+  }
+  if (window.location.hostname === 'pytech.digital' || window.location.hostname === 'www.pytech.digital') {
+    return 'https://localseo-master.preview.emergentagent.com';
+  }
+  return window.location.origin;
+};
+
+const BACKEND_URL = getBackendURL();
 const API = `${BACKEND_URL}/api`;
 
 const HomePage = () => {
