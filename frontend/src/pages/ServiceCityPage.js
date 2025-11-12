@@ -7,8 +7,12 @@ import Footer from '@/components/Footer';
 import ContactSection from '@/components/ContactSection';
 import { CheckCircle2, MapPin } from 'lucide-react';
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || window.location.origin;
 const API = `${BACKEND_URL}/api`;
+
+// Log for debugging
+console.log('ServiceCityPage - BACKEND_URL:', BACKEND_URL);
+console.log('ServiceCityPage - Full API URL:', API);
 
 const ServiceCityPage = () => {
   const { serviceSlug, citySlug } = useParams();
