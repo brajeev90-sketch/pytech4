@@ -7,10 +7,27 @@ import Footer from '@/components/Footer';
 import ContactSection from '@/components/ContactSection';
 import { CheckCircle2, MapPin } from 'lucide-react';
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || window.location.origin;
+// Handle both development and production environments
+const getBackendURL = () => {
+  // If REACT_APP_BACKEND_URL is set, use it
+  if (process.env.REACT_APP_BACKEND_URL) {
+    return process.env.REACT_APP_BACKEND_URL;
+  }
+  
+  // If on pytech.digital, use the preview backend
+  if (window.location.hostname === 'pytech.digital' || window.location.hostname === 'www.pytech.digital') {
+    return 'https://localseo-master.preview.emergentagent.com';
+  }
+  
+  // Otherwise use current origin (for local dev)
+  return window.location.origin;
+};
+
+const BACKEND_URL = getBackendURL();
 const API = `${BACKEND_URL}/api`;
 
 // Log for debugging
+console.log('ServiceCityPage - Current hostname:', window.location.hostname);
 console.log('ServiceCityPage - BACKEND_URL:', BACKEND_URL);
 console.log('ServiceCityPage - Full API URL:', API);
 
